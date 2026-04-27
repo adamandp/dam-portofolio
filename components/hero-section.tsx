@@ -6,7 +6,7 @@ import { motion } from "motion/react";
 
 export default function HeroSection() {
   return (
-    <section id="home" className="relative mt-10 overflow-hidden">
+    <section id="home" className="relative mt-20 lg:mt-10 overflow-hidden">
       <div className="pointer-events-none absolute inset-0 z-0">
         <div className="absolute -top-25 -left-25 w-80 h-80 bg-pink-300/25 dark:bg-purple-600/25 blur-3xl rounded-full" />
         <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-cyan-300/25 dark:bg-cyan-500/25 blur-3xl rounded-full" />
@@ -18,11 +18,11 @@ export default function HeroSection() {
 
       <div className="max-w-7xl mx-auto px-6 flex flex-col justify-center  relative min-h-screen">
         <motion.div className="max-w-4xl z-10">
-          <div className="inline-block mb-6 px-4 py-2 border-2 border-black dark:border-white font-bold bg-[#FF90E8] dark:bg-[#FF90E8] text-black dark:text-black shadow-[4px_4px_0px_0px_black] dark:shadow-[4px_4px_0px_0px_white] -rotate-3">
+          <div className="inline-block mb-6 px-4 py-2 border-2 border-black dark:border-white font-bold bg-[#FF90E8] dark:bg-[#FF90E8] text-black dark:text-black shadow-[4px_4px_0px_0px_black] dark:shadow-[4px_4px_0px_0px_white] -rotate-3 text-c-5">
             STATUS: ACCEPTING NEW CHALLENGES
           </div>
 
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-black leading-[1.1] tracking-tighter uppercase mb-8">
+          <h1 className="text-c-16 sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[1.1] tracking-tighter uppercase mb-8">
             build
             <br />
             <span className="text-transparent bg-clip-text bg-linear-to-r from-pink-500 to-yellow-500 dark:from-lime-400 dark:to-cyan-400 stroke-2 [-webkit-text-stroke:2px_black] dark:[-webkit-text-stroke:2px_white]">
@@ -32,7 +32,7 @@ export default function HeroSection() {
             experiences.
           </h1>
 
-          <p className="text-md md:text-lg lg:text-xl font-medium max-w-2xl mb-12 border-l-8 border-black dark:border-white pl-6">
+          <p className="text-c-6 md:text-lg lg:text-xl font-medium max-w-2xl mb-12 border-l-8 border-black dark:border-white pl-6">
             I architect and build scalable, high-performance web applications.
             Engineering digital excellence with modern architectures and
             confident design.
