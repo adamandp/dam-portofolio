@@ -22,7 +22,7 @@ export default function ContactSection() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <SectionHeader title="Let's Build" subtitle="Start a Conversation" />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -61,7 +61,7 @@ export default function ContactSection() {
             </div>
           </motion.div>
 
-          <motion.form
+          {/* <motion.form
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -104,7 +104,7 @@ export default function ContactSection() {
             >
               Send Transmission <Send size={20} />
             </button>
-          </motion.form>
+          </motion.form> */}
         </div>
       </div>
     </section>
