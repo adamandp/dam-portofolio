@@ -37,10 +37,10 @@ export default function ContactSection() {
               solution.
             </p>
 
-            <div className="space-y-6">
+            <div className="space-y-6 text-c-6 md:text-c-7 lg:text-c-8">
               <a
                 href="mailto:hello@example.com"
-                className="flex items-center space-x-4 text-xl font-bold group"
+                className="flex items-center space-x-4 font-bold group"
               >
                 <div className="p-4 bg-yellow-300 text-black border-4 border-black dark:border-white transition-all group-hover:translate-x-1 group-hover:translate-y-1">
                   <Mail size={24} />
@@ -50,7 +50,7 @@ export default function ContactSection() {
                 </span>
               </a>
 
-              <div className="flex items-center space-x-4 text-xl font-bold group">
+              <div className="flex items-center space-x-4 font-bold group">
                 <div className="p-4 bg-cyan-300 text-black border-4 border-black dark:border-white transition-all group-hover:translate-x-1 group-hover:translate-y-1">
                   <Globe size={24} />
                 </div>

@@ -6,16 +6,15 @@ import { motion } from "motion/react";
 
 export default function HeroSection() {
   return (
-    <section id="home" className="relative py-c-20 lg:my-10 ">
-      <div className="pointer-events-none absolute inset-0 z-0">
+    <section id="home" className="relative pb-c-20 pt-c-60">
+      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
         <div className="absolute -top-25 -left-25 w-80 h-80 bg-pink-300/25 dark:bg-purple-600/25 blur-3xl rounded-full" />
         <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-cyan-300/25 dark:bg-cyan-500/25 blur-3xl rounded-full" />
-
         <div className="absolute inset-0 opacity-[0.06] dark:opacity-[0.08] bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] bg-size-[44px_44px]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_50%,rgba(0,0,0,0.12))] dark:bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(0,0,0,0.55))]" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 flex flex-col justify-center  relative min-h-screen">
+      <div className="max-w-7xl mx-auto px-6 flex flex-col justify-center  relative ">
         <motion.div className="max-w-4xl z-10">
           <div className="inline-block mb-6 px-4 py-2 border-2 border-black dark:border-white font-bold bg-[#FF90E8] dark:bg-[#FF90E8] text-black dark:text-black shadow-[4px_4px_0px_0px_black] dark:shadow-[4px_4px_0px_0px_white] -rotate-3 text-c-5">
             STATUS: ACCEPTING NEW CHALLENGES

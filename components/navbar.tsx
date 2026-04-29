@@ -36,7 +36,7 @@ export default function Navbar() {
   if (!mounted) return null;
 
   return (
-    <div className="mb-c-35 lg:mb-c-28 xl:mb-0">
+    <div>
       <nav
         className={`fixed top-0 w-full z-40 border-b-4 border-black dark:border-white bg-[#FDFBF7] dark:bg-zinc-950 transition-colors duration-300`}
       >
