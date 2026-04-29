@@ -26,29 +26,24 @@ function ProjectContainer({ setSelectedProject }: ProjectContainerProps) {
           {PROJECTS.map((project, index) => (
             <motion.div
               key={project.id}
-              // Animasi y (vertikal) biasanya lebih smooth dibanding scale untuk scroll
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              // once: false bikin animasi jalan tiap kali di-scroll (tidak hanya awal load)
               viewport={{ once: false, amount: 0.1 }}
-              // Delay dikecilkan dari 0.5 ke 0.1 agar tidak patah-patah/menunggu lama
               transition={{
                 duration: 0.4,
                 delay: index * 0.1,
                 ease: "easeOut",
               }}
               onClick={() => setSelectedProject(project)}
-              style={{ willChange: "transform, opacity" }} // Hardware acceleration
+              style={{ willChange: "transform, opacity" }}
               className="group cursor-pointer relative brutal-border bg-white dark:bg-zinc-800 shadow-[8px_8px_0_0_#000] dark:shadow-[8px_8px_0_0_white] hover:shadow-[0px_0px_0_0_#000] dark:hover:shadow-[0px_0px_0_0_white] flex flex-col hover:translate-x-2 hover:translate-y-2 transition-all duration-300 transform-gpu"
             >
-              {/* Image Container */}
-              <div className="h-56 w-full relative overflow-hidden border-b-4 border-black dark:border-white bg-zinc-200 dark:bg-zinc-800">
-                {/* Image Setup */}
+              <div className="w-full relative overflow-hidden border-b-4 border-black dark:border-white bg-zinc-200 dark:bg-zinc-800 aspectvide">
                 {project.images && project.images.length > 0 ? (
                   <img
                     src={project.images[0]}
                     alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="group-hover:scale-110 transition-transform duration-700 w-full h-full object-contain aspect-video"
                     loading="lazy"
                     decoding="async"
                   />
@@ -61,12 +56,10 @@ function ProjectContainer({ setSelectedProject }: ProjectContainerProps) {
                   </div>
                 )}
 
-                {/* Brutalist Color Tint Overlay - Hilang saat di hover! */}
                 <div
-                  className={`absolute inset-0 opacity-60 mix-blend-multiply dark:mix-blend-overlay group-hover:opacity-0 transition-opacity duration-500 ${project.color} ${project.darkColor}`}
+                  className={`absolute inset-0 opacity-60 mix-blend-multiply dark:mix-blend-overlay group-hover:opacity-0 transition-opacity duration-500`}
                 ></div>
 
-                {/* View Details Label */}
                 <div className="absolute bottom-4 right-4 bg-white dark:bg-zinc-900 text-black dark:text-white px-3 py-1 font-bold border-2 border-black dark:border-white shadow-[2px_2px_0_0_#000] dark:shadow-[2px_2px_0_0_#FFF] opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-2 z-10">
                   View Details <ArrowRight size={16} />
                 </div>

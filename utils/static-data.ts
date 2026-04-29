@@ -9,13 +9,15 @@ interface PROJECTS_INTERFACE {
   darkColor: string;
   textColor: string;
   darkTextColor: string;
-  images: string[]; // Menambahkan properti images
+  images: string[];
+  deploymentUrL?: string;
+  sourceCodeUrl: string;
 }
 
 const PROJECTS: PROJECTS_INTERFACE[] = [
   {
     id: 1,
-    title: "Nexus Commerce Engine",
+    title: "Creamy Cream",
     shortDesc: "High-performance headless e-commerce backend.",
     fullDesc:
       "Engineered a scalable headless e-commerce platform designed for high-volume transactions. The architecture decouples the frontend presentation layer from the complex backend business logic, allowing for unparalleled flexibility and speed.",
@@ -27,14 +29,28 @@ const PROJECTS: PROJECTS_INTERFACE[] = [
     textColor: "text-black",
     darkTextColor: "dark:text-black",
     images: [
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1000&auto=format&fit=crop", // E-commerce terminal
-      "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?q=80&w=1000&auto=format&fit=crop", // Online shopping concept
-      "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=1000&auto=format&fit=crop"  // Payment processing
+      "projects/creamy-cream/creamy-cream-1.png",
+      "projects/creamy-cream/creamy-cream-2.png",
+      "projects/creamy-cream/creamy-cream-3.png",
+      "projects/creamy-cream/creamy-cream-4.png",
+      "projects/creamy-cream/creamy-cream-5.png",
+      "projects/creamy-cream/creamy-cream-6.png",
+      "projects/creamy-cream/creamy-cream-7.png",
+      "projects/creamy-cream/creamy-cream-8.png",
+      "projects/creamy-cream/creamy-cream-9.png",
+      "projects/creamy-cream/creamy-cream-10.png",
+      "projects/creamy-cream/creamy-cream-11.png",
+      "projects/creamy-cream/creamy-cream-12.png",
+      "projects/creamy-cream/creamy-cream-13.png",
+      "projects/creamy-cream/creamy-cream-14.png",
+      "projects/creamy-cream/creamy-cream-15.png",
     ],
+    deploymentUrL: "https://dam-creamy-cream.vercel.app/",
+    sourceCodeUrl: "https://github.com/adamandp/dam-creamy-cream",
   },
   {
     id: 2,
-    title: "Aura Analytics Dashboard",
+    title: "Company Profile",
     shortDesc: "Real-time data visualization platform.",
     fullDesc:
       "A comprehensive analytics dashboard that processes and visualizes real-time data streams. Designed for enterprise clients to monitor KPIs with zero-latency updates and interactive chart components.",
@@ -46,14 +62,18 @@ const PROJECTS: PROJECTS_INTERFACE[] = [
     textColor: "text-white",
     darkTextColor: "dark:text-white",
     images: [
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop", // Data dashboard
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop", // Analytics charts
-      "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=1000&auto=format&fit=crop"  // Data visualization
+      "projects/company-profile/company-profile-1.png",
+      "projects/company-profile/company-profile-2.png",
+      "projects/company-profile/company-profile-3.png",
+      "projects/company-profile/company-profile-4.png",
+      "projects/company-profile/company-profile-5.png",
     ],
+    deploymentUrL: "https://dam-company-profile.vercel.app/",
+    sourceCodeUrl: "https://github.com/adamandp/dam-company-profile",
   },
   {
     id: 3,
-    title: "Vanguard Identity SaaS",
+    title: "Neural Classifier",
     shortDesc: "Secure authentication & authorization service.",
     fullDesc:
       "Developed a B2B SaaS product focused on providing seamless, secure identity management. Features include RBAC, SSO integrations, and advanced audit logging for compliance.",
@@ -65,14 +85,17 @@ const PROJECTS: PROJECTS_INTERFACE[] = [
     textColor: "text-black",
     darkTextColor: "dark:text-black",
     images: [
-      "https://images.unsplash.com/photo-1614064641913-a5323ea1f22b?q=80&w=1000&auto=format&fit=crop", // Cyber security / Lock
-      "https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=1000&auto=format&fit=crop", // Code screen
-      "https://images.unsplash.com/photo-1563206767-5b18f218e8de?q=80&w=1000&auto=format&fit=crop"  // Network security
+      "projects/neural-classifier/neural-classifier-1.png",
+      "projects/neural-classifier/neural-classifier-2.png",
+      "projects/neural-classifier/neural-classifier-3.png",
+      "projects/neural-classifier/neural-classifier-4.png",
     ],
+    deploymentUrL: "https://dam-neural-classifier.vercel.app/",
+    sourceCodeUrl: "https://github.com/adamandp/dam-neural-classifier",
   },
   {
     id: 4,
-    title: "Pulse Workflow Automator",
+    title: "Rate Rush",
     shortDesc: "Visual node-based automation tool.",
     fullDesc:
       "An internal productivity tool allowing non-technical teams to build automated workflows by connecting triggers and actions via a drag-and-drop node interface.",
@@ -84,10 +107,37 @@ const PROJECTS: PROJECTS_INTERFACE[] = [
     textColor: "text-black",
     darkTextColor: "dark:text-black",
     images: [
-      "https://images.unsplash.com/photo-1507238692062-f74812f845a7?q=80&w=1000&auto=format&fit=crop", // Nodes / Connections concept
-      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000&auto=format&fit=crop", // Workspace / coding
-      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1000&auto=format&fit=crop"  // Planning / Workflow
+      "projects/rate-rush/rate-rush-1.png",
+      "projects/rate-rush/rate-rush-2.png",
+      "projects/rate-rush/rate-rush-3.png",
     ],
+    deploymentUrL: "https://dam-rate-rush.vercel.app/",
+    sourceCodeUrl: "https://github.com/adamandp/dam-rate-rush",
+  },
+  {
+    id: 5,
+    title: "Shop Control",
+    shortDesc: "Visual node-based automation tool.",
+    fullDesc:
+      "An internal productivity tool allowing non-technical teams to build automated workflows by connecting triggers and actions via a drag-and-drop node interface.",
+    tech: ["React", "Framer Motion", "Node.js", "PostgreSQL"],
+    challenges:
+      "Building a performant, accessible drag-and-drop canvas. Utilized advanced DOM manipulation and state management to ensure smooth 60fps animations even with hundreds of nodes on screen.",
+    color: "bg-lime-400",
+    darkColor: "dark:bg-lime-500",
+    textColor: "text-black",
+    darkTextColor: "dark:text-black",
+    images: [
+      "projects/shop-control/shop-control-1.png",
+      "projects/shop-control/shop-control-2.png",
+      "projects/shop-control/shop-control-3.png",
+      "projects/shop-control/shop-control-4.png",
+      "projects/shop-control/shop-control-5.png",
+      "projects/shop-control/shop-control-6.png",
+      "projects/shop-control/shop-control-7.png",
+    ],
+    deploymentUrL: "https://dam-shop-control.vercel.app/",
+    sourceCodeUrl: "https://github.com/adamandp/dam-shop-control",
   },
 ];
 

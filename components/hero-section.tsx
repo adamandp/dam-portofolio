@@ -6,7 +6,7 @@ import { motion } from "motion/react";
 
 export default function HeroSection() {
   return (
-    <section id="home" className="relative mt-20 lg:mt-10 overflow-hidden">
+    <section id="home" className="relative py-c-20 lg:my-10 ">
       <div className="pointer-events-none absolute inset-0 z-0">
         <div className="absolute -top-25 -left-25 w-80 h-80 bg-pink-300/25 dark:bg-purple-600/25 blur-3xl rounded-full" />
         <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-cyan-300/25 dark:bg-cyan-500/25 blur-3xl rounded-full" />

@@ -11,9 +11,26 @@ import {
   ChevronRight,
   Image as ImageIcon,
 } from "lucide-react";
+import { useRouter } from "next/navigation";
+
+interface PROJECTS_INTERFACE {
+  id: number;
+  title: string;
+  shortDesc: string;
+  fullDesc: string;
+  tech: string[];
+  challenges: string;
+  color: string;
+  darkColor: string;
+  textColor: string;
+  darkTextColor: string;
+  images: string[];
+  deploymentUrL?: string;
+  sourceCodeUrl: string;
+}
 
 interface ProjectModalProps {
-  selectedProject: any;
+  selectedProject: PROJECTS_INTERFACE | null;
   setSelectedProject: (project: any | null) => void;
 }
 
@@ -24,10 +41,9 @@ export default function ProjectModal({
   const scrollRef = useRef<HTMLDivElement>(null);
   const [isAutoScrolling, setIsAutoScrolling] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
-
   const totalImages = selectedProject?.images?.length || 0;
+  const router = useRouter();
 
-  // Fungsi untuk memindahkan scroll ke index tertentu
   const scrollToIndex = useCallback((index: number) => {
     if (scrollRef.current) {
       const width = scrollRef.current.clientWidth;
@@ -36,12 +52,10 @@ export default function ProjectModal({
     }
   }, []);
 
-  // Update index secara sinkron saat user geser manual pakai jari/trackpad
   const handleScroll = () => {
     if (!scrollRef.current) return;
     const width = scrollRef.current.clientWidth;
     const scrollLeft = scrollRef.current.scrollLeft;
-    // Hitung sedang berada di index gambar ke berapa berdasarkan posisi scroll
     const newIndex = Math.round(scrollLeft / width);
 
     if (newIndex !== currentIndex && newIndex >= 0 && newIndex < totalImages) {
@@ -49,33 +63,27 @@ export default function ProjectModal({
     }
   };
 
-  // Fungsi Next & Prev dengan Infinite Looping
   const scrollNext = useCallback(() => {
     if (totalImages <= 1) return;
-    const nextIndex = (currentIndex + 1) % totalImages; // Mentok kanan -> balik ke 0
+    const nextIndex = (currentIndex + 1) % totalImages;
     scrollToIndex(nextIndex);
   }, [currentIndex, totalImages, scrollToIndex]);
 
   const scrollPrev = useCallback(() => {
     if (totalImages <= 1) return;
-    const prevIndex = (currentIndex - 1 + totalImages) % totalImages; // Mentok kiri -> balik ke akhir
+    const prevIndex = (currentIndex - 1 + totalImages) % totalImages;
     scrollToIndex(prevIndex);
   }, [currentIndex, totalImages, scrollToIndex]);
 
-  // Efek Auto-Scroll yang sinkron dengan State Index
   useEffect(() => {
     if (totalImages <= 1 || !isAutoScrolling) return;
-
-    // Setiap kali currentIndex berubah, interval direset.
-    // Jadi kalau user swipe manual, auto-scroll gak akan langsung motong secara tiba-tiba
     const intervalId = setInterval(() => {
       scrollNext();
-    }, 2000); // 3 Detik
+    }, 2000);
 
     return () => clearInterval(intervalId);
   }, [isAutoScrolling, scrollNext, totalImages, currentIndex]);
 
-  // Reset semuanya kalau user buka modal project lain
   useEffect(() => {
     setCurrentIndex(0);
     setIsAutoScrolling(true);
@@ -136,7 +144,6 @@ export default function ProjectModal({
                     onTouchEnd={() => setIsAutoScrolling(true)}
                   >
                     <div className="relative brutal-border shadow-[6px_6px_0_0_#000] dark:shadow-[6px_6px_0_0_#FFF] bg-black">
-                      {/* Container Scroll */}
                       <div
                         ref={scrollRef}
                         onScroll={handleScroll}
@@ -146,12 +153,12 @@ export default function ProjectModal({
                           (img: string, idx: number) => (
                             <div
                               key={idx}
-                              className="w-full flex-shrink-0 snap-center aspect-video relative bg-zinc-200 dark:bg-zinc-800"
+                              className="w-full shrink-0 snap-center aspect-video relative bg-zinc-200 dark:bg-zinc-800"
                             >
                               <img
                                 src={img}
                                 alt={`${selectedProject.title} screenshot ${idx + 1}`}
-                                className="w-full h-full object-cover"
+                                className="w-full h-full object-contain"
                                 loading="lazy"
                                 decoding="async"
                               />
@@ -252,12 +259,20 @@ export default function ProjectModal({
               </section>
 
               <div className="pt-6 border-t-4 border-black dark:border-zinc-700 flex flex-wrap gap-4">
+                {selectedProject.deploymentUrL && (
+                  <button
+                    className={`${selectedProject.color} ${selectedProject.darkColor} ${selectedProject.textColor} ${selectedProject.darkTextColor} flex items-center gap-2 font-bold py-3 px-6 brutal-border shadow-[4px_4px_0_0_#000] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all`}
+                    onClick={() =>
+                      router.push(selectedProject.deploymentUrL || "")
+                    }
+                  >
+                    View Live Deployment <Globe size={20} />
+                  </button>
+                )}
                 <button
-                  className={`${selectedProject.color} ${selectedProject.darkColor} ${selectedProject.textColor} ${selectedProject.darkTextColor} flex items-center gap-2 font-bold py-3 px-6 brutal-border shadow-[4px_4px_0_0_#000] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all`}
+                  className="bg-white dark:bg-zinc-800 flex items-center gap-2 font-bold py-3 px-6 brutal-border shadow-[4px_4px_0_0_#000] dark:shadow-[4px_4px_0_0_#FFF] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all"
+                  onClick={() => window.open(selectedProject.sourceCodeUrl)}
                 >
-                  View Live Deployment <Globe size={20} />
-                </button>
-                <button className="bg-white dark:bg-zinc-800 flex items-center gap-2 font-bold py-3 px-6 brutal-border shadow-[4px_4px_0_0_#000] dark:shadow-[4px_4px_0_0_#FFF] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
                   Examine Source <Terminal size={20} />
                 </button>
               </div>

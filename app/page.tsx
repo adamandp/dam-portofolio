@@ -7,7 +7,7 @@ import ProjectSection from "@/components/project-section";
 import ContactSection from "@/components/contact-section";
 import MarqueeSection from "@/components/marquee-section";
 
-export default function App() {
+export default function Home() {
   return (
     <div
       className={`min-h-screen bg-[#FDFBF7] dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans selection:bg-lime-400 selection:text-black transition-colors duration-300`}
@@ -21,7 +21,6 @@ export default function App() {
         <ProjectSection />
         <ContactSection />
       </div>
-
       <Footer />
     </div>
   );
