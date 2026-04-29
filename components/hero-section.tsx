@@ -12,7 +12,6 @@ export default function HeroSection() {
         <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-cyan-300/25 dark:bg-cyan-500/25 blur-3xl rounded-full" />
 
         <div className="absolute inset-0 opacity-[0.06] dark:opacity-[0.08] bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] bg-size-[44px_44px]" />
-
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_50%,rgba(0,0,0,0.12))] dark:bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(0,0,0,0.55))]" />
       </div>
 
